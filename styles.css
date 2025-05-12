@@ -46,20 +46,22 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
 
 /* Occupation composition section two-column layout */
 #occupation-section {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background: #fafafa;
-  padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.section-header {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
 }
 #occupation-text {
-  flex: 1;
-  padding-right: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
 }
 #occupation-embed {
-  flex: 1;
+    width: 100%;
+    max-width: 900px;
 }
 
 /* Content section */
