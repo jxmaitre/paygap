@@ -12,7 +12,6 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  overflow: hidden;
   transition: opacity 0.6s ease-in-out;
 }
 #hero h1 {
@@ -21,7 +20,7 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Bar-chart section two-column layout */
+/* Bar-chart section */
 #bar-chart-section {
   min-height: 100vh;
   display: flex;
@@ -31,44 +30,31 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
   padding: 2rem 5%;
 }
 #chart-container { flex: 1; }
-#chart-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #333;
-}
-#chart-text {
-  flex: 1;
-  padding-left: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
+#chart-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+#chart-text { flex: 1; padding-left: 2rem; font-size: 1.1rem; line-height: 1.6; }
 
-/* Occupation composition section two-column layout */
+/* Occupation composition section */
 #occupation-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 5%;
 }
 .section-header {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
 }
-#occupation-text {
-    max-width: 800px;
-    margin-bottom: 1.5rem;
+#occupation-text, #occupation-text-2 {
+  max-width: 800px;
+  margin-bottom: 1.5rem;
 }
-#occupation-text-2 {
-    max-width: 800px;
-    margin-bottom: 1.5rem;
-    margin-top: 2rem;
-}
-#occupation-embed {
-    width: 100%;
-    max-width: 900px;
+
+/* Observable Runtime placeholder styling */
+#observablehq-barChart-63484d0c {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
 }
 
 /* Content section */

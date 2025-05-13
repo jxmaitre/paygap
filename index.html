@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="styles.css" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Observable Inspector CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
 </head>
 <body>
   <!-- Full-page hero section -->
@@ -21,7 +23,7 @@
     </div>
     <div id="chart-text">
       <p>Historically, <b>women have earned less than men in nearly every field</b>, but the <b>size of the gap has shifted over time for each field</b> — and <b>it isn’t the same everywhere.</b></p>
-      <br>   
+      <br>
       <p>In this report, <b>we examine the gender pay gap across a range of occupations over the past decade</b>.</p>
     </div>
   </section>
@@ -35,22 +37,16 @@
       <p>To examine that, we looked at the <b>proportion of male and female workers in each occupation, sorted by median pay</b> — highlighting which fields lean heavily male, which lean heavily female, and which remain balanced.</p>
       <br>
     </div>
-    <div id="occupation-embed">
-      <iframe width="100%" height="700" frameborder="0"
-        src="https://observablehq.com/embed/31114f1b46459cb1?cells=barChart&banner=false">
-      </iframe>
-    </div>
+    <!-- Observable Runtime embed placeholder -->
+    <div id="observablehq-barChart-63484d0c"></div>
     <div id="occupation-text-2">
-        <p>It’s clear that some occupations are strongly gendered.<br> 
-            Fields like Healthcare Support and Healthcare Practitioners are predominantly held by women, 
-            while Construction and Maintenance remain overwhelmingly male‑dominated.<br>
-            Other categories, such as Legal and Business & Finance, stood out as they hovered just 
-            above 50% female, which challenged some of our individual assumptions.</p>
-        <br>
-        <p>This observation led us to consider: <b>does the percentage of women in an occupation 
-            relate to how large or small the gender pay gap is within that field? Are female‑dominated 
-            industries more equitable when it comes to compensation—or does the gap persist regardless 
-            of gender representation? How has that gap changed in the past decade?</b></p>
+      <p>It’s clear that some occupations are strongly gendered.<br>
+         Fields like Healthcare Support and Healthcare Practitioners are predominantly held by women,<br>
+         while Construction and Maintenance remain overwhelmingly male‑dominated.<br>
+         Other categories, such as Legal and Business & Finance, hovered just above 50% female, challenging some of our assumptions.
+      </p>
+      <br>
+      <p>This observation led us to consider: <b>does the percentage of women in an occupation relate to how large or small the gender pay gap is within that field?</b> Are female‑dominated industries more equitable when it comes to compensation—or does the gap persist regardless of gender representation? How has that gap changed in the past decade?</p>
     </div>
   </section>
 
@@ -58,16 +54,20 @@
   <section id="content">
     <h2>Further Analysis</h2>
     <p>Insert your text and graphs here.</p>
-    <!-- Example iframe embed of your Observable cell -->
-    <div id="observable-embed">
-      <iframe width="100%" height="400" frameborder="0"
-        src="https://observablehq.com/embed/@your-username/your-notebook?cell=chart">
-      </iframe>
-    </div>
   </section>
 
   <!-- D3.js -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="scripts.js"></script>
+
+  <!-- Observable Runtime Embed Script -->
+  <script type="module">
+    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/d/31114f1b46459cb1.js?v=4";
+    new Runtime().module(define, name => {
+      if (name === "barChart")
+        return new Inspector(document.querySelector("#observablehq-barChart-63484d0c"));
+    });
+  </script>
 </body>
 </html>

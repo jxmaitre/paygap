@@ -1,11 +1,10 @@
 // Wait for DOM load
 document.addEventListener("DOMContentLoaded", () => {
+    // Hero and first chart observer
     const hero = document.getElementById("hero");
     const barSection = document.getElementById("bar-chart-section");
     let chartCreated = false;
-  
-    // IntersectionObserver to trigger hero fade and chart creation
-    const observer = new IntersectionObserver((entries) => {
+    new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           hero.style.opacity = 0;
@@ -17,11 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
           hero.style.opacity = 1;
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.5 }).observe(barSection);
   
-    observer.observe(barSection);
-  
-    // Create D3 bar chart and attach scroll event
+    /** Scroll-driven bar chart **/
     function createScrollDrivenBarChart() {
       const data = [
         { gender: "Men",   value: 1     },
@@ -46,16 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
         .range([margin.top, height - margin.bottom])
         .padding(0.4);
   
-      // Y-axis
       svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
         .call(d3.axisLeft(y))
         .call(g => g.select(".domain").remove())
         .call(g => g.selectAll("text").attr("font-size", "16px").attr("font-weight", "bold"));
   
-      // Bars initialized at zero width
-      const bars = svg.append("g")
-        .selectAll("rect")
+      const bars = svg.append("g").selectAll("rect")
         .data(data)
         .join("rect")
           .attr("x", margin.left)
@@ -64,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
           .attr("width", 0)
           .attr("fill", d => d.gender === "Men" ? "#667eea" : "#fe6b8b");
   
-      // Scroll event drives bar width
       window.addEventListener("scroll", () => {
         const rect = barSection.getBoundingClientRect();
         const progress = Math.min(Math.max(1 - rect.top / window.innerHeight, 0), 1);
