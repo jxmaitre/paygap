@@ -57,9 +57,14 @@
   <!-- Gender-wage-gap exploration -->
   <section id="gap-exploration">
     <h2 class="section-header">Explore the Gap Over Time</h2>
-    <p class="italic-text"><em>Use the slider to explore trends over time.<br>Click on a dumbbell to see more detailed information about the sub-occupations within that field.</em></p>
+    <p class="italic-text"><em>Use the slider to explore trends over time.<br>
+        Salaries are indexed to 2023 dollars.<br>
+        Click on a dumbbell to see more detailed information about the sub-occupations within that field.</em></p>
     <div id="observablehq-viewof-selectedYear-12e95a3f"></div>
     <div id="observablehq-dumbbell-12e95a3f"></div>
+    <div id="observablehq-viewof-selectedOccupation-46ddd901"></div>
+    <div id="observablehq-viewof-selectedSubcategory-46ddd901"></div>
+    <div id="observablehq-svg10-46ddd901"></div>
     <div id="gap-exploration-text">
         <p>While the dumbbell chart shows the pay gap in broad fields over time, it doesn’t capture how that gap might differ across specific roles within the same occupation. For example, how does pay differ between judges and lawyers by gender, and how do those numbers contribute to the overall gap in the legal field. Our final visual breaks down each occupation into its subcategories, allowing for a closer look at how individual roles within a field shape the broader trends.</p>
     </div>
@@ -89,5 +94,17 @@
       return ["yearSpecificData"].includes(name);
     });
   </script>
+
+  <!-- For specific breakdown exploration section -->
+  <script type="module">
+    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/d/31114f1b46459cb1.js?v=4";
+    new Runtime().module(define, name => {
+      if (name === "viewof selectedOccupation") return new Inspector(document.querySelector("#observablehq-viewof-selectedOccupation-46ddd901"));
+      if (name === "viewof selectedSubcategory") return new Inspector(document.querySelector("#observablehq-viewof-selectedSubcategory-46ddd901"));
+      if (name === "svg10") return new Inspector(document.querySelector("#observablehq-svg10-46ddd901"));
+      return ["dumbbell","subcategories"].includes(name);
+    });
+    </script>
 </body>
 </html>

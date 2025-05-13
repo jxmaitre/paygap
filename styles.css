@@ -75,8 +75,10 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
 
 /* Observable Runtime placeholder styling */
 #observablehq-barChart-63484d0c,
-#observablehq-viewof-selectedYear-12e95a3f,
-#observablehq-dumbbell-12e95a3f {
+#observablehq-dumbbell-12e95a3f,
+#observablehq-svg10-46ddd901,
+#observablehq-viewof-selectedOccupation-46ddd901,
+#observablehq-viewof-selectedSubcategory-46ddd901 {
   width: 100%;
   max-width: 900px;
   margin: 0 auto 2rem;
