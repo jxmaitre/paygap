@@ -54,10 +54,15 @@
     </div>
   </section>
 
-  <!-- Placeholder for further content -->
-  <section id="content">
-    <h2>Further Analysis</h2>
-    <p>Insert your text and graphs here.</p>
+  <!-- Gender-wage-gap exploration -->
+  <section id="gap-exploration">
+    <h2 class="section-header">Explore the Gap Over Time</h2>
+    <p class="italic-text"><em>Use the slider to explore trends over time.<br>Click on a dumbbell to see more detailed information about the sub-occupations within that field.</em></p>
+    <div id="observablehq-viewof-selectedYear-12e95a3f"></div>
+    <div id="observablehq-dumbbell-12e95a3f"></div>
+    <div id="gap-exploration-text">
+        <p>While the dumbbell chart shows the pay gap in broad fields over time, it doesn’t capture how that gap might differ across specific roles within the same occupation. For example, how does pay differ between judges and lawyers by gender, and how do those numbers contribute to the overall gap in the legal field. Our final visual breaks down each occupation into its subcategories, allowing for a closer look at how individual roles within a field shape the broader trends.</p>
+    </div>
   </section>
 
   <!-- D3.js -->
@@ -71,6 +76,17 @@
     new Runtime().module(define, name => {
       if (name === "barChart")
         return new Inspector(document.querySelector("#observablehq-barChart-63484d0c"));
+    });
+  </script>
+
+  <!-- Observable Runtime Embed for Time Exploration -->
+<script type="module">
+    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define2 from "https://api.observablehq.com/d/31114f1b46459cb1.js?v=4";
+    new Runtime().module(define2, name => {
+      if (name === "viewof selectedYear") return new Inspector(document.querySelector("#observablehq-viewof-selectedYear-12e95a3f"));
+      if (name === "dumbbell") return new Inspector(document.querySelector("#observablehq-dumbbell-12e95a3f"));
+      return ["yearSpecificData"].includes(name);
     });
   </script>
 </body>

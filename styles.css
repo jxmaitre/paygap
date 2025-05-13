@@ -26,7 +26,7 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #f9f9f9;
+  background: #fff;
   padding: 2rem 5%;
 }
 #chart-container { flex: 1; }
@@ -39,7 +39,8 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 2rem 5%;
+  background: #f9f9f9;
+  padding: 2rem 5%;
 }
 .section-header {
   font-size: 1.75rem;
@@ -50,8 +51,32 @@ html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', s
   margin-bottom: 1rem;
 }
 
+/* Gap exploration section */
+#gap-exploration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 5%;
+    background: #fff;
+    padding: 2rem 0;
+}
+  .italic-text {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.4;
+}
+#gap-exploration-text {
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+
 /* Observable Runtime placeholder styling */
-#observablehq-barChart-63484d0c {
+#observablehq-barChart-63484d0c,
+#observablehq-viewof-selectedYear-12e95a3f,
+#observablehq-dumbbell-12e95a3f {
   width: 100%;
   max-width: 900px;
   margin: 0 auto 2rem;
