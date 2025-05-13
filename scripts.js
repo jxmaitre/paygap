@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function createScrollDrivenBarChart() {
       const data = [
         { gender: "Men",   value: 1     },
-        { gender: "Women", value: 0.811 }
+        { gender: "Women", value: 0.84 }
       ];
       const width  = 525,
             height = 300,
