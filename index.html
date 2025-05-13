@@ -88,5 +88,24 @@
       return ["yearSpecificData","combined_earnings","selectedYear","selectedOccupation","selectedSubcategory"].includes(name);
     });
   </script>
+
+<!-- Auto-scroll to detail chart on dumbbell click (lines and hover-rect only) -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector('#observablehq-dumbbell-12e95a3f');
+      const detail = document.querySelector('#observablehq-viewof-selectedOccupation-46ddd901');
+      if (container && detail) {
+        container.addEventListener('click', (event) => {
+          const target = event.target;
+          // scroll when clicking the actual line or the transparent hover rect
+          if (target.tagName.toLowerCase() === 'line' ||
+              (target.tagName.toLowerCase() === 'rect' && target.classList.contains('hover-rect'))) {
+            detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
