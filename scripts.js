@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { gender: "Men",   value: 1     },
         { gender: "Women", value: 0.84 }
       ];
-      const width  = 525,
+      const width  = 475,
             height = 300,
             margin = { top: 60, right: 20, bottom: 40, left: 140 };
   
